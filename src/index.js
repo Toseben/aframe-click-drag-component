@@ -452,7 +452,11 @@ const {didMount, didUnmount} = (function getDidMountAndUnmount() {
       });
     }
 
-    function onMouseDown({clientX, clientY}) {
+    function onMouseDown({clientX, clientY, which}) {
+
+      if (which !== 3) {
+        return;
+      }
 
       const {depth, offset, element} = selectItem(THREE, componentName, camera, clientX, clientY);
 
@@ -511,9 +515,9 @@ const {didMount, didUnmount} = (function getDidMountAndUnmount() {
       };
     }
 
-    function onMouseUp({clientX, clientY}) {
+    function onMouseUp({clientX, clientY, which}) {
 
-      if (!draggedElement) {
+      if (!draggedElement || which !== 3) {
         return;
       }
 
