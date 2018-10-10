@@ -15,10 +15,5 @@
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
     "no-unused-vars": ["error", { "argsIgnorePattern": "_" }],
     "new-cap": ["error", { "capIsNewExceptions": ["React.Children"] }]
-  },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-    }
   }
 }

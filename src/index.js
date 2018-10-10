@@ -390,7 +390,7 @@ function dragItem(THREE, element, offset, camera, depth, mouseInfo) {
 
     element.setAttribute('position', nextPosition);
 
-    element.setAttribute('rotation', nextRotation);
+    // element.setAttribute('rotation', nextRotation);
   }
 
   function onTouchMove({changedTouches: [touchInfo]}) {
@@ -552,6 +552,11 @@ const {didMount, didUnmount} = (function getDidMountAndUnmount() {
 
       document.addEventListener('touchstart', onTouchStart);
       document.addEventListener('touchend', onTouchEnd);
+
+      // document.addEventListener("createEvent", function (e) {
+      //   const {clientX, clientY} = e.detail;
+      //   onMouseDown(clientX, clientY, 3);
+      // });
 
       removeClickListeners = _ => {
         document.removeEventListener('mousedown', onMouseDown);
